@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:seoscraper-api:1.1.13'
+    implementation 'com.github.apiverve:seoscraper-api:1.1.14'
 }
 ```
 
@@ -47,7 +47,7 @@ SEODataScraperAPIClient client = new SEODataScraperAPIClient("YOUR_API_KEY");
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("url", "");
+    parameters.put("url", "https://apiverve.com");
 
     // Execute the request
     APIResponse response = client.execute(parameters);
