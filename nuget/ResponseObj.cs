@@ -25,6 +25,9 @@ namespace APIVerve.API.SEODataScraper
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -114,10 +117,10 @@ namespace APIVerve.API.SEODataScraper
         public string OgImageType { get; set; }
 
         [JsonProperty("og:image:width")]
-        public string OgImageWidth { get; set; }
+        public long? OgImageWidth { get; set; }
 
         [JsonProperty("og:image:height")]
-        public string OgImageHeight { get; set; }
+        public long? OgImageHeight { get; set; }
 
         [JsonProperty("twitter:title")]
         public string TwitterTitle { get; set; }
@@ -195,7 +198,7 @@ namespace APIVerve.API.SEODataScraper
         public Heading[] Headings { get; set; }
 
         [JsonProperty("imgTags")]
-        public ImgTag[] ImgTags { get; set; }
+        public Dictionary<string, string>[] ImgTags { get; set; }
 
         [JsonProperty("responseBody")]
         public string ResponseBody { get; set; }
@@ -203,32 +206,29 @@ namespace APIVerve.API.SEODataScraper
         [JsonProperty("viewport")]
         public string Viewport { get; set; }
 
-        [JsonProperty("X-UA-Compatible")]
-        public string XUaCompatible { get; set; }
+        [JsonProperty("googlebot")]
+        public string Googlebot { get; set; }
 
-        [JsonProperty("360-site-verification")]
-        public string The360SiteVerification { get; set; }
+        [JsonProperty("theme-color")]
+        public string ThemeColor { get; set; }
 
-        [JsonProperty("fb:app_id")]
-        public string FbAppId { get; set; }
+        [JsonProperty("application-name")]
+        public string ApplicationName { get; set; }
 
-        [JsonProperty("msvalidate.01")]
-        public string Msvalidate01 { get; set; }
+        [JsonProperty("msapplication-TileColor")]
+        public string MsapplicationTileColor { get; set; }
 
-        [JsonProperty("referrer")]
-        public string Referrer { get; set; }
+        [JsonProperty("mobile-web-app-capable")]
+        public string MobileWebAppCapable { get; set; }
 
-        [JsonProperty("y_key")]
-        public string YKey { get; set; }
+        [JsonProperty("apple-mobile-web-app-title")]
+        public string AppleMobileWebAppTitle { get; set; }
 
-        [JsonProperty("google-site-verification")]
-        public string GoogleSiteVerification { get; set; }
+        [JsonProperty("apple-mobile-web-app-status-bar-style")]
+        public string AppleMobileWebAppStatusBarStyle { get; set; }
 
-        [JsonProperty("google-adsense-account")]
-        public string GoogleAdsenseAccount { get; set; }
-
-        [JsonProperty("yandex-verification")]
-        public string YandexVerification { get; set; }
+        [JsonProperty("og:image:alt")]
+        public string OgImageAlt { get; set; }
     }
 
     public partial class Favicon
@@ -236,26 +236,20 @@ namespace APIVerve.API.SEODataScraper
         [JsonProperty("rel")]
         public string Rel { get; set; }
 
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
         [JsonProperty("href")]
-        public Uri Href { get; set; }
+        public string Href { get; set; }
     }
 
     public partial class Heading
     {
         [JsonProperty("level")]
-        public Level Level { get; set; }
+        public Level? Level { get; set; }
 
         [JsonProperty("text")]
         public string Text { get; set; }
-    }
-
-    public partial class ImgTag
-    {
-        [JsonProperty("src")]
-        public Uri Src { get; set; }
-
-        [JsonProperty("alt")]
-        public string Alt { get; set; }
     }
 
     public partial class Jsonld
@@ -266,32 +260,8 @@ namespace APIVerve.API.SEODataScraper
         [JsonProperty("@type")]
         public string Type { get; set; }
 
-        [JsonProperty("@id")]
-        public Uri Id { get; set; }
-
-        [JsonProperty("url")]
-        public Uri Url { get; set; }
-
-        [JsonProperty("author")]
-        public Author Author { get; set; }
-
-        [JsonProperty("isPartOf")]
-        public IsPartOf IsPartOf { get; set; }
-
-        [JsonProperty("inLanguage")]
-        public string InLanguage { get; set; }
-
-        [JsonProperty("sameAs")]
-        public Uri[] SameAs { get; set; }
-    }
-
-    public partial class Author
-    {
-        [JsonProperty("@type")]
-        public string Type { get; set; }
-
-        [JsonProperty("@id")]
-        public Uri Id { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
 
         [JsonProperty("url")]
         public Uri Url { get; set; }
@@ -299,82 +269,10 @@ namespace APIVerve.API.SEODataScraper
         [JsonProperty("logo")]
         public Uri Logo { get; set; }
 
-        [JsonProperty("description")]
-        public string Description { get; set; }
+        [JsonProperty("sameAs", NullValueHandling = NullValueHandling.Ignore)]
+        public Uri[] SameAs { get; set; }
 
-        [JsonProperty("founder")]
-        public Founder Founder { get; set; }
-
-        [JsonProperty("foundingDate")]
-        public DateTimeOffset FoundingDate { get; set; }
-
-        [JsonProperty("foundingLocation")]
-        public string FoundingLocation { get; set; }
-
-        [JsonProperty("name")]
-        public string Name { get; set; }
-
-        [JsonProperty("legalName")]
-        public string LegalName { get; set; }
-
-        [JsonProperty("contactPoint")]
-        public ContactPoint ContactPoint { get; set; }
-    }
-
-    public partial class ContactPoint
-    {
-        [JsonProperty("@type")]
-        public string Type { get; set; }
-
-        [JsonProperty("availableLanguage")]
-        public AvailableLanguage[] AvailableLanguage { get; set; }
-
-        [JsonProperty("contactOption")]
-        public string ContactOption { get; set; }
-
-        [JsonProperty("contactType")]
-        public string ContactType { get; set; }
-
-        [JsonProperty("telephone")]
-        public string Telephone { get; set; }
-    }
-
-    public partial class AvailableLanguage
-    {
-        [JsonProperty("@type")]
-        public string Type { get; set; }
-
-        [JsonProperty("name")]
-        public string Name { get; set; }
-
-        [JsonProperty("alternateName")]
-        public string AlternateName { get; set; }
-    }
-
-    public partial class Founder
-    {
-        [JsonProperty("@type")]
-        public string Type { get; set; }
-
-        [JsonProperty("@id")]
-        public Uri Id { get; set; }
-
-        [JsonProperty("name")]
-        public string Name { get; set; }
-    }
-
-    public partial class IsPartOf
-    {
-        [JsonProperty("@type")]
-        public string Type { get; set; }
-
-        [JsonProperty("@id")]
-        public Uri Id { get; set; }
-
-        [JsonProperty("url")]
-        public Uri Url { get; set; }
-
-        [JsonProperty("potentialAction")]
+        [JsonProperty("potentialAction", NullValueHandling = NullValueHandling.Ignore)]
         public PotentialAction PotentialAction { get; set; }
     }
 
@@ -384,11 +282,32 @@ namespace APIVerve.API.SEODataScraper
         public string Type { get; set; }
 
         [JsonProperty("target")]
-        public string Target { get; set; }
+        public Target Target { get; set; }
 
         [JsonProperty("query-input")]
         public string QueryInput { get; set; }
     }
 
-    public enum Level { H2, H3, H4 };
+    public partial class Target
+    {
+        [JsonProperty("@type")]
+        public string Type { get; set; }
+
+        [JsonProperty("urlTemplate")]
+        public string UrlTemplate { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
+    }
+
+    public enum Level { H1, H2, H3, H4, H5 };
 }
