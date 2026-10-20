@@ -1,13 +1,13 @@
-# [SEO Data Scraper API](https://apiverve.com/marketplace/seoscraper?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [SEO Data Scraper API](https://apiverve.com/marketplace/seoscraper?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-SEO Scraper is a simple tool for scraping SEO data. It returns the meta title, meta description, and more.
+SEO Data Scraper parses any public URL to collect title tags, meta descriptions, robots directives, and Open Graph or Twitter card previews. Paid plans add canonical URLs to verify indexing rules.
 
 The SEO Data Scraper API provides a simple, reliable way to integrate seo data scraper functionality into your applications. Built for developers who need production-ready seo data scraper capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/seoscraper?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/seoscraper?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/seoscraper?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/seoscraper?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -167,7 +167,7 @@ go get github.com/apiverve/seoscraper-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [SEO Data Scraper API](https://apiverve.com/marketplace/seoscraper?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [SEO Data Scraper API](https://apiverve.com/marketplace/seoscraper?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/seoscraper](https://docs.apiverve.com/ref/seoscraper)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -197,11 +197,47 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the SEO Data Scraper API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "url": "https://apiverve.com",
+    "title": "APIVerve — One key for 300+ production APIs",
+    "description": "Consistent schemas, predictable credit pricing, and an uptime SLA on every paid plan across 300+ production APIs. One key, one bill, zero glue code.",
+    "keywords": "",
+    "author": "",
+    "canonical": "",
+    "og:title": "APIVerve — One key for 300+ production APIs",
+    "og:description": "Consistent schemas, predictable credit pricing, and an uptime SLA on every paid plan across 300+ production APIs. One key, one bill, zero glue code.",
+    "og:image": "https://apiverve.com/social-images/page-home.png",
+    "og:url": "https://apiverve.com",
+    "og:type": "website",
+    "og:site_name": "APIVerve",
+    "twitter:card": "summary_large_image",
+    "twitter:title": "APIVerve — One key for 300+ production APIs",
+    "twitter:description": "Consistent schemas, predictable credit pricing, and an uptime SLA on every paid plan across 300+ production APIs.",
+    "twitter:image": "https://apiverve.com/social-images/page-home.png",
+    "twitter:site": "",
+    "robots": "",
+    "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
+    "charset": "utf-8"
+  }
 }
 ```
 
@@ -209,7 +245,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [SEO Data Scraper API](https://apiverve.com/marketplace/seoscraper?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [SEO Data Scraper API](https://apiverve.com/marketplace/seoscraper?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
