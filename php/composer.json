@@ -1,0 +1,49 @@
+{
+    "name": "apiverve/seoscraper",
+    "description": "SEO Data Scraper parses any public URL to collect title tags, meta descriptions, robots directives, and Open Graph or Twitter card previews. Paid plans add canonical URLs to verify indexing rules.",
+    "version": "1.2.2",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "APIVerve",
+            "email": "hello@apiverve.com",
+            "homepage": "https://apiverve.com"
+        }
+    ],
+    "keywords": [
+        "api",
+        "apiverve",
+        "seoscraper",
+        "seo scraping api",
+        "seo data scraper api",
+        "seo scraper api",
+        "scrape meta tags",
+        "extract open graph tags"
+    ],
+    "homepage": "https://apiverve.com/marketplace/seoscraper?utm_source=php&utm_medium=referral&utm_content=homepage",
+    "support": {
+        "email": "hello@apiverve.com",
+        "docs": "https://docs.apiverve.com/ref/seoscraper",
+        "source": "https://github.com/apiverve/seoscraper-API/tree/main/php"
+    },
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "APIVerve\\Seoscraper\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "APIVerve\\Seoscraper\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
