@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/seoscraper",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "SEO Data Scraper parses any public URL to collect title tags, meta descriptions, robots directives, and Open Graph or Twitter card previews. Paid plans add canonical URLs to verify indexing rules.",
   "main": "index.js",
   "types": "index.d.ts",
