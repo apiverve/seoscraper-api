@@ -88,7 +88,9 @@ $client = new Client(
     "twitter:site": "",
     "robots": "",
     "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
-    "charset": "utf-8"
+    "charset": "utf-8",
+    "titleRelevance": 47.91,
+    "descriptionRelevance": 51.65
   }
 }
 ```
