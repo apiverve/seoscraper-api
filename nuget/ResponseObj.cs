@@ -24,10 +24,79 @@ namespace APIVerve.API.SEODataScraper
         public object Error { get; set; }
 
         [JsonProperty("data")]
-        public Dictionary<string, string> Data { get; set; }
+        public Data Data { get; set; }
 
         [JsonProperty("premium")]
         public Premium Premium { get; set; }
+    }
+
+    public partial class Data
+    {
+        [JsonProperty("url")]
+        public Uri Url { get; set; }
+
+        [JsonProperty("title")]
+        public string Title { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("keywords")]
+        public string Keywords { get; set; }
+
+        [JsonProperty("author")]
+        public string Author { get; set; }
+
+        [JsonProperty("canonical")]
+        public string Canonical { get; set; }
+
+        [JsonProperty("og:title")]
+        public string OgTitle { get; set; }
+
+        [JsonProperty("og:description")]
+        public string OgDescription { get; set; }
+
+        [JsonProperty("og:image")]
+        public Uri OgImage { get; set; }
+
+        [JsonProperty("og:url")]
+        public Uri OgUrl { get; set; }
+
+        [JsonProperty("og:type")]
+        public string OgType { get; set; }
+
+        [JsonProperty("og:site_name")]
+        public string OgSiteName { get; set; }
+
+        [JsonProperty("twitter:card")]
+        public string TwitterCard { get; set; }
+
+        [JsonProperty("twitter:title")]
+        public string TwitterTitle { get; set; }
+
+        [JsonProperty("twitter:description")]
+        public string TwitterDescription { get; set; }
+
+        [JsonProperty("twitter:image")]
+        public Uri TwitterImage { get; set; }
+
+        [JsonProperty("twitter:site")]
+        public string TwitterSite { get; set; }
+
+        [JsonProperty("robots")]
+        public string Robots { get; set; }
+
+        [JsonProperty("viewport")]
+        public string Viewport { get; set; }
+
+        [JsonProperty("charset")]
+        public string Charset { get; set; }
+
+        [JsonProperty("titleRelevance")]
+        public double? TitleRelevance { get; set; }
+
+        [JsonProperty("descriptionRelevance")]
+        public double? DescriptionRelevance { get; set; }
     }
 
     public partial class Premium
